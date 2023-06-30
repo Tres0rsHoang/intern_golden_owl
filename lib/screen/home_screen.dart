@@ -14,6 +14,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     if (items.isNotEmpty) {
       return SafeArea(
         child: Scaffold(
@@ -22,9 +23,10 @@ class Home extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                SizedBox(width: width/8,),
                 Expanded(child: Container(
                     height: 600,
-                    margin: const EdgeInsets.only(left:500, right: 100),
+                    margin: const EdgeInsets.only(left:0, right: 0),
                     decoration: const BoxDecoration(
                         color: Color(0xFFFFFFFF),
                         borderRadius: BorderRadius.all(Radius.circular(20))
@@ -90,9 +92,10 @@ class Home extends StatelessWidget {
                       ),
                     )
                 ),),
+                SizedBox(width: width/8,),
                 Expanded(child: Container(
                     height: 600,
-                    margin: const EdgeInsets.only(right:500, left: 100),
+                    margin: const EdgeInsets.only(right: 0, left: 0),
                     decoration: const BoxDecoration(
                         color: Color(0xFFFFFFFF),
                         borderRadius: BorderRadius.all(Radius.circular(20))
@@ -176,7 +179,8 @@ class Home extends StatelessWidget {
                         ],
                       ),
                     )
-                ),)
+                ),),
+                SizedBox(width: width/8,),
               ],
             )
           ),
